@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hochladen | FamArchive</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="app/css/stylesheet_image.css">
+    <!-- Scripts -->
+    <script src="app/js/classes/ScriptLoader.js"></script>
+    <script src="app/js/logic_image_upload.js"></script>
+</head>
+<body>
+    <main id="page_content" class="page-content">
+        <input type="file" name="input_image_image" id="input_image_image" style="display: none;">
+        <section class="section-image">
+            <canvas id="canavas_image_view"></canvas>
+        </section>
+        <section class="section-details">
+            <h2>Details:</h2>
+            <div class="box" id="box_metadata">
+                <div class="line">
+                    <span class="bold">Aufnahmedatum</span>
+                    <span><input type="text" name="input_image_date" id="input_image_date" placeholder="xx.xx.xxxx"></span>
+                </div>
+                <div class="line">
+                    <span class="bold">Aufnahmeort</span>
+                    <span><input type="text" name="input_image_location" id="input_image_location" placeholder=""></span>
+                </div>
+                <div class="line">
+                    <span class="bold">Latitude</span>
+                    <span><input type="text" name="input_image_latitude" id="input_image_latitude" placeholder=""></span>
+                </div>
+                <div class="line">
+                    <span class="bold">Longitude</span>
+                    <span><input type="text" name="input_image_longitude" id="input_image_longitude" placeholder=""></span>
+                </div>
+                <div class="line">
+                    <span class="bold">Beschreibung</span>
+                    <span><input type="text" name="input_image_description" id="input_image_description" placeholder=""></span>
+                </div>
+            </div>
+            <h2>Personen:</h2>
+            <div class="box" id="box_persons">
+            </div>
+        </section>
+    </main>
+    <button class="add" onclick="saveEdits()"><img src="./app/resources/icons/icon_light_check.svg" alt="Save"></button>
+</body>
+</html>

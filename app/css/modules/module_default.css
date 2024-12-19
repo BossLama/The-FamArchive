@@ -1,0 +1,72 @@
+@import url(module_dialog.css);
+
+:root
+{
+    --font-primary:             'Roboto', sans-serif;
+
+    --color-palette-primary:    #292929;
+    --color-palette-background: #f0f0f0;
+    --color-palette-text:       #333;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html
+{
+    font-family: var(--font-primary);
+    background-color: var(--color-palette-background);
+    color: var(--color-palette-text);
+}
+
+    body
+    {
+        display: flex;
+    }
+
+    main
+    {
+        height: 100vH;
+        overflow-y: scroll;
+        flex: 1;
+        padding: 2rem 5%;
+    }
+
+    input
+    {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        font-family: var(--font-primary);
+    }
+
+
+
+    button.add
+    {
+        position: fixed;
+        z-index: 100;
+        bottom: 2rem;
+        right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: var(--color-palette-primary);
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+        button.add:hover
+        {
+            transform: scale(1.1);
+        }

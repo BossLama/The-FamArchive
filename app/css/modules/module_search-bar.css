@@ -1,0 +1,26 @@
+.section-search
+{
+    margin-bottom: 3rem;
+}
+
+    .section-search input
+    {
+        max-width: 400px; 
+        border-left: 3px solid #000;
+    }
+    
+    .section-search button
+    {
+        padding: 0.5rem 1rem;
+        background-color: #000;
+        color: #fff;
+        font-family: var(--font-primary);
+        border: none;
+        border-radius: 0 5rem 5rem 0;
+        cursor: pointer;
+    }
+
+    .section-search button:hover
+    {
+        background-color: #333;
+    }

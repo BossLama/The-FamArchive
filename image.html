@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansicht | FamArchive</title>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="app/css/stylesheet_image.css">
+    <!-- Scripts -->
+    <script src="app/js/classes/ScriptLoader.js"></script>
+    <script src="app/js/logic_image.js"></script>
+</head>
+<body>
+    <main id="page_content" class="page-content">
+        <section class="section-image">
+            <canvas id="canavas_image_view"></canvas>
+        </section>
+        <section class="section-details">
+            <h2>Details:</h2>
+            <div class="box" id="box_metadata">
+                <div class="line"><span class="bold">Aufnahmedatum</span><span>21.01.2024</span></div>
+                <div class="line"><span class="bold">Aufnahmeort</span><span>21.01.2024</span></div>
+                <div class="line"><span class="bold">Beschreibung</span><span>21.01.2024</span></div>
+            </div>
+            <h2>Personen:</h2>
+            <div class="box" id="box_persons">
+                <div class="line align">
+                    <span class="bold">Max Mustermann *1938</span>
+                    <span>
+                        <button>Öffnen</button>
+                        <button>Anzeigen</button>
+                    </span>
+                </div>
+            </div>
+            <section class="map-view">
+                <h2>Karte</h2>
+                <div id="map" class="map"></div>
+            </section>
+        </section>
+    </main>
+    <button class="add" id="button_edit"><img src="./app/resources/icons/icon_light_edit.svg" alt="Edit"></button>
+</body>
+</html>

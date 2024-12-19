@@ -1,0 +1,131 @@
+@import url(modules/module_default.css);
+@import url(modules/module_side-navigation.css);
+
+main
+{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+    main .section-image
+    {
+        flex: 1;
+    }
+
+        main .section-image canvas
+        {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 0.5rem;
+            animation: loading 5s infinite;
+            cursor: pointer;
+        }
+
+    main .section-details
+    {
+        flex: 1;
+        max-height: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+        main .section-details h2
+        {
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        main .map-view.hidden
+        {
+            display: none;
+        }
+
+            main .map-view .map
+            {
+                background-color: #fff;
+                width: 100%;
+                height: 300px;
+            }
+
+        main .section-details .box
+        {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+            main .section-details .box .line
+            {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            main .section-details .box .line.align
+            {
+                align-items: center;
+            }
+
+                main .section-details .box .line span
+                {
+                    flex: 1;
+                    font-weight: 300;
+                }
+
+                main .section-details .box .line span.bold
+                {
+                    font-weight: 500;
+                }
+
+                main .section-details .box .line span.buttons
+                {
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                }
+            
+            main .section-details .box .line button
+            {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: #fff;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+
+            main .section-details .box .line button.delete,
+            main .section-details .button-delete
+            {
+                background-color: #a1271f;
+                color: #fff;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+
+
+
+
+
+
+    @keyframes loading {
+        0%
+        {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        50%
+        {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        100%
+        {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }

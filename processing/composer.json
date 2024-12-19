@@ -1,0 +1,17 @@
+{
+    "name": "jonas/famarchive",
+    "autoload": {
+        "psr-4": {
+            "\\FamArchive\\": "app/",
+            "\\FamArchive\\Actions\\": "actions/",
+            "\\FamArchive\\Models\\": "models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jonas",
+            "email": "riemer.jonas@outlook.de"
+        }
+    ],
+    "require": {}
+}
