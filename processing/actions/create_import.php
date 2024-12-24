@@ -89,7 +89,7 @@ foreach($images as $image)
     $sql = "INSERT INTO images (id, year, month, day, description, location, latitude, longitude, url, created_at) VALUES (:id, :year, :month, :day, :description, :location, :latitude, :longitude, :url, :created_at)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($image);
-    echo "Importiere Image: {$image['path']} <br>";
+    echo "Importiere Image: {$image['url']} <br>";
 }
 
 # Import idents
