@@ -77,7 +77,7 @@ foreach($events as $event)
 # Import trees
 foreach($trees as $tree)
 {
-    $sql = "INSERT INTO persontrees (id, person_id, mother_id, father_id, created_at) VALUES (:id, :person_id, :mother_id, :father_id, :created_at)";
+    $sql = "INSERT INTO persontrees (person_id, mother_id, father_id, created_at) VALUES (:person_id, :mother_id, :father_id, :created_at)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($tree);
     echo "Importiere Tree: {$tree['person_id']} <br>";
