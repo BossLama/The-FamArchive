@@ -59,7 +59,7 @@ $idents = json_decode($ident_json, true);
 # Import persons
 foreach($persons as $person)
 {
-    $sql = "INSERT INTO persons (id, first_name, last_name, nut_name, birth_year, birth_month, birth_day, death_year, death_month, death_day) VALUES (:id, :first_name, :last_name, :nut_name, :birth_year, :birth_month, :birth_day, :death_year, :death_month, :death_day)";
+    $sql = "INSERT INTO persons (id, first_name, last_name, nut_name, birth_year, birth_month, birth_day, death_year, death_month, death_day, created_at) VALUES (:id, :first_name, :last_name, :nut_name, :birth_year, :birth_month, :birth_day, :death_year, :death_month, :death_day, :created_at)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($person);
     echo "Importiere Person: {$person['first_name']} {$person['last_name']} <br>";
@@ -68,7 +68,7 @@ foreach($persons as $person)
 # Import events
 foreach($events as $event)
 {
-    $sql = "INSERT INTO personevents (id, person_id, year, month, day, description) VALUES (:id, :person_id, :year, :month, :day, :description)";
+    $sql = "INSERT INTO personevents (id, person_id, year, month, day, description, created_at) VALUES (:id, :person_id, :year, :month, :day, :description, :created_at)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($event);
     echo "Importiere Event: {$event['description']} <br>";
@@ -77,7 +77,7 @@ foreach($events as $event)
 # Import trees
 foreach($trees as $tree)
 {
-    $sql = "INSERT INTO persontrees (id, person_id, mother_id, father_id) VALUES (:id, :person_id, :mother_id, :father_id)";
+    $sql = "INSERT INTO persontrees (id, person_id, mother_id, father_id, created_at) VALUES (:id, :person_id, :mother_id, :father_id, :created_at)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($tree);
     echo "Importiere Tree: {$tree['person_id']} <br>";
@@ -86,7 +86,7 @@ foreach($trees as $tree)
 # Import images
 foreach($images as $image)
 {
-    $sql = "INSERT INTO images (id, person_id, path) VALUES (:id, :person_id, :path)";
+    $sql = "INSERT INTO images (id, year, month, day, description, location, latitude, longitude, url, created_at) VALUES (:id, :year, :month, :day, :description, :location, :latitude, :longitude, :url, :created_at)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($image);
     echo "Importiere Image: {$image['path']} <br>";
@@ -95,7 +95,7 @@ foreach($images as $image)
 # Import idents
 foreach($idents as $ident)
 {
-    $sql = "INSERT INTO personidents (id, person_id, ident) VALUES (:id, :person_id, :ident)";
+    $sql = "INSERT INTO personidents (id, person_id, image_id, x, y, width, height) VALUES (:id, :person_id, :image_id, :x, :y, :width, :height)";
     $stmt = $dbConnection->prepare($sql);
     $stmt->execute($ident);
     echo "Importiere Ident: {$ident['ident']} <br>";

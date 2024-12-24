@@ -125,15 +125,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['import_file'])) {
             background-color: #0056b3;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>FamArchive Importer</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <label for="import_file">ZIP-Datei hochladen:</label>
-            <input type="file" name="import_file" id="import_file" accept=".zip" required>
-            <button type="submit">Import starten</button>
-        </form>
-    </div>
-</body>
-</html>
+    
