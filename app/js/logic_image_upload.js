@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = new ScriptLoader();
     loader.addScript("plugins/UnicornAlert");
     loader.addScript("classes/Sidenavigation");
+    loader.addScript("dialogs/PersonCreateDialog");
     loader.addScript("dialogs/IdentCreateDialog");
     loader.addScript("classes/ImageUploadLoader");
     

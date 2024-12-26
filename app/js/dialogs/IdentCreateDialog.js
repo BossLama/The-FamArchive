@@ -95,7 +95,13 @@ class IdentCreateDialog
     // Event when button "Person erstellen" is clicked
     onPersonCreate()
     {
-        return;
+        new PersonCreateDialog((person) => {
+            this.selectedPerson = person;
+            let input_name = document.getElementById("input_ident_create_name");
+            let input_id = document.getElementById("input_ident_create_id");
+            input_name.value = `${person.first_name} ${person.last_name}`;
+            input_id.value = person.id;
+        });
     }
 
     // Event when button "Abbrechen" is clicked
