@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loader = new ScriptLoader();
+    loader.addScript("plugins/UnicornAlert");
     loader.addScript("dialogs/PersonCreateDialog");
     loader.addScript("dialogs/ConfirmDialog");
     loader.addScript("classes/Sidenavigation");
@@ -22,7 +23,9 @@ function postLoaded()
 // Open the dialog to create a new person
 function createNewPerson()
 {
-    new PersonCreateDialog();
+    new PersonCreateDialog(() => {
+        loadPersons();
+    });
 }
 
 function loadPersons()
@@ -79,18 +82,47 @@ function getPersonItem(person)
         <td>
             <button class="edit" onclick="editPerson()">Bearbeiten</button>
             <button class="show" onclick="showPerson()">Anzeigen</button>
-            <button class="delete" onclick="deletePerson(${person.id})">Löschen</button>
+            <button class="delete">Löschen</button>
         </td>`;
+
+    let delete_buton = item.querySelector(".delete");
+    delete_buton.addEventListener("click", () => {
+        deletePerson(person);
+    }); 
 
     return item;
 }
 
-function deletePerson(id)
+function deletePerson(person)
 {
-    new ConfirmDialog((result) => {
+    var id = person.id;
+    var message = "Soll " + person.first_name + " " + person.last_name + " wirklich gelöscht werden?";
+
+    new ConfirmDialog(message, (result) => {
         if(result)
         {
-           alert("Person wurde gelöscht");
+            fetch("./processing/actions/delete_person.php?id=" + id, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === "success")
+                {
+                    const unicornManager =  new UnicornAlertHandler();
+                    unicornManager.createAlert(UnicornAlertTypes.WARNING, 'Person wurde gelöscht', 3000);
+                    setTimeout(() => {
+                        loadPersons();
+                    }, 3000);
+                }
+                else
+                {
+                    const unicornManager =  new UnicornAlertHandler();
+                    unicornManager.createAlert(UnicornAlertTypes.ERROR, data.message, 3000);
+                }
+            });
         }
     });
 }

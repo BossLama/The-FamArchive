@@ -1,7 +1,8 @@
 class ConfirmDialog
 {
-    constructor(onSave = (result) => {})
+    constructor(message = "", onSave = (result) => {})
     {
+        this.message = message;
         this.dialog = null;
         this.onSave = onSave;
         this.renderDialog((dialog) => {
@@ -10,7 +11,6 @@ class ConfirmDialog
                 this.hideDialog();
                 this.onSave(true);
             });
-            this.initInputListeners();
         });
     }   
 
@@ -21,7 +21,7 @@ class ConfirmDialog
         .then(response => response.text())
         .then(data => {
             let dialog = document.createElement("div");
-            dialog.innerHTML = data;
+            dialog.innerHTML = data.replace("{{message}}", this.message);
             document.body.appendChild(dialog);
             this.dialog = dialog;
             callback(dialog);
