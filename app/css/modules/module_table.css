@@ -1,0 +1,76 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #444;
+}
+
+thead td {
+    padding: 12px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 2px solid #666;
+}
+
+tbody tr {
+    transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+tbody tr:hover {
+    background-color: #555;
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.edit {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+button.edit:hover {
+    background-color: #218838;
+}
+
+button.show
+{
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+button.show:hover {
+    background-color: #0069d9;
+}
+
+button.delete {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+button.delete:hover {
+    background-color: #c82333;
+}

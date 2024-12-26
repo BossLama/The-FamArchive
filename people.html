@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personen | FamArchive</title>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="app/css/stylesheet_index.css">
+    <link rel="stylesheet" href="app/css/stylesheet_people.css">
     <!-- Scripts -->
     <script src="app/js/classes/ScriptLoader.js"></script>
     <script src="app/js/logic_persons.js"></script>
@@ -18,7 +18,19 @@
         </section>
         <section class="section-gallery">
             <h2>Personen:</h2>
-            <div class="gallery" id="gallery"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Vorname</td>
+                        <td>Nachname</td>
+                        <td>Mädchenname</td>
+                        <td>Geburtstag</td>
+                        <td>Sterbetag</td>
+                        <td>Aktionen</td>
+                    </tr>
+                </thead>
+                <tbody id="table_persons"><!-- Hier werden Personen geladen --></tbody>
+            </table>
         </section>
 
        <button class="add" onclick="createNewPerson()"><img src="./app/resources/icons/icon_light_add.svg" alt="Add"></button>
