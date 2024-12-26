@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personen | FamArchive</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="app/css/stylesheet_index.css">
+    <!-- Scripts -->
+    <script src="app/js/classes/ScriptLoader.js"></script>
+    <script src="app/js/logic_persons.js"></script>
+</head>
+<body>
+    <main id="page_content" class="page-content">
+        <section class="section-search">
+            <input type="text" name="input_search_value" id="input_search_value" placeholder="Suche nach Personen">
+            <button type="button" id="button_search_submit">Suchen</button>
+        </section>
+        <section class="section-gallery">
+            <h2>Personen:</h2>
+            <div class="gallery" id="gallery"></div>
+        </section>
+
+        <a href="./image_upload.html"><button class="add"><img src="./app/resources/icons/icon_light_add.svg" alt="Add"></button></a>
+    </main>
+</body>
+</html>
