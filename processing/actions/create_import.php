@@ -56,6 +56,28 @@ $images = json_decode($images_json, true);
 $ident_json = file_get_contents($import_folder . "/idents.json");
 $idents = json_decode($ident_json, true);
 
+
+# Reset database
+$sql = "TRUNCATE TABLE persons";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
+$sql = "TRUNCATE TABLE personevents";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
+$sql = "TRUNCATE TABLE persontrees";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
+$sql = "TRUNCATE TABLE images";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
+$sql = "TRUNCATE TABLE personidents";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
 # Import persons
 foreach($persons as $person)
 {

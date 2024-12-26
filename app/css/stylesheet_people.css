@@ -3,3 +3,8 @@
 @import url(modules/module_search-bar.css);
 @import url(modules/module_table.css);
 
+h2
+{
+    margin-bottom: 2rem;
+    font-weight: 300;
+}

@@ -52,21 +52,19 @@ function getPersonItem(person)
     let nutname = person.nut_name ? person.nut_name : "Unbekannt";
 
     let birthday = person.birth_day ? person.birth_day : "xx";
-    if(birthday.length < 2) birthday = "0" + birthday;
+    if(birthday < 10) birthday = "0" + birthday;
     let birthmonth = person.birth_month ? person.birth_month : "xx";
-    if(birthmonth.length < 2) birthmonth = "0" + birthmonth;
+    if(birthmonth < 10) birthmonth = "0" + birthmonth;
     let birthyear = person.birth_year ? person.birth_year : "xxxx";
-    if(birthyear.length < 4) birthyear = "xxxx";
 
     let birthdate = `${birthday}.${birthmonth}.${birthyear}`;
     if(birthdate === "xx.xx.xxxx") birthdate = "Unbekannt";
 
     let deathday = person.death_day ? person.death_day : "xx";
-    if(deathday.length < 2) deathday = "0" + deathday;
+    if(deathday < 10) deathday = "0" + deathday;
     let deathmonth = person.death_month ? person.death_month : "xx";
-    if(deathmonth.length < 2) deathmonth = "0" + deathmonth;
+    if(deathmonth < 10) deathmonth = "0" + deathmonth;
     let deathyear = person.death_year ? person.death_year : "xxxx";
-    if(deathyear.length < 4) deathyear = "xxxx";
 
     let deathdate = `${deathday}.${deathmonth}.${deathyear}`;
     if(deathdate === "xx.xx.xxxx") deathdate = "Unbekannt";
