@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = new ScriptLoader();
     loader.addScript("plugins/UnicornAlert");
     loader.addScript("classes/Sidenavigation");
+    loader.addScript("dialogs/ConfirmDialog");
     loader.addScript("dialogs/PersonCreateDialog");
     loader.addScript("dialogs/IdentCreateDialog");
     loader.addScript("classes/ImageEditLoader");
@@ -30,5 +31,10 @@ function saveEdits()
 
 function deleteImage()
 {
-    image_edit_loader.deleteImage();
+    new ConfirmDialog("Soll das Bild wirklich gelöscht werden?", (result) => {
+        if(result)
+        {
+            image_edit_loader.deleteImage();
+        }
+    });
 }

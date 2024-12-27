@@ -109,12 +109,17 @@ class ImageEditLoader
         button_delete.classList.add("delete");
         button_delete.innerHTML = "Löschen";
         button_delete.addEventListener("click", () => {
-            if(String(ident.id).includes("created"))
-            {   
-                this.created_idents.delete(ident.id);
-            }
-            else this.removed_idents.push(ident.id);
-            line.remove();
+            new ConfirmDialog("Soll die Identifikation wirklich gelöscht werden?", (result) => {
+                if(result)
+                {
+                    if(String(ident.id).includes("created"))
+                    {   
+                        this.created_idents.delete(ident.id);
+                    }
+                    else this.removed_idents.push(ident.id);
+                    line.remove();
+                }
+            });
         });
         
         let button_show = document.createElement("button");
