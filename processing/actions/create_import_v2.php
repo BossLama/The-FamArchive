@@ -70,6 +70,10 @@ $ident_json = file_get_contents($temp_dir . "/idents.json");
 $idents = json_decode($ident_json, true);
 
 # Reset database
+$sql = "SET FOREIGN_KEY_CHECKS = 0";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
 $sql = "TRUNCATE TABLE persons";
 $stmt = $dbConnection->prepare($sql);
 $stmt->execute();
@@ -87,6 +91,10 @@ $stmt = $dbConnection->prepare($sql);
 $stmt->execute();
 
 $sql = "TRUNCATE TABLE personidents";
+$stmt = $dbConnection->prepare($sql);
+$stmt->execute();
+
+$sql = "SET FOREIGN_KEY_CHECKS = 1";
 $stmt = $dbConnection->prepare($sql);
 $stmt->execute();
 
