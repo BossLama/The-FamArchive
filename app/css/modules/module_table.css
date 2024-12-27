@@ -45,10 +45,11 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    background-color: #b6b6b6;
 }
 
 button.edit {
-    background-color: #28a745;
+    background-color: #34506e;
     color: #ffffff;
 }
 
@@ -58,7 +59,7 @@ button.edit:hover {
 
 button.show
 {
-    background-color: #007bff;
+    background-color: #34506e;
     color: #ffffff;
 }
 

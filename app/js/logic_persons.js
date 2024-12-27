@@ -80,7 +80,7 @@ function getPersonItem(person)
         <td>${deathdate}</td>
         <td>
             <button class="edit" onclick="editPerson(${person.id})">Bearbeiten</button>
-            <button class="show" onclick="showPerson()">Anzeigen</button>
+            <button class="show" onclick="showPerson(${person.id})">Baum anzeigen</button>
             <button class="delete">Löschen</button>
         </td>`;
 
@@ -131,4 +131,9 @@ function editPerson(id)
     new PersonEditDialog(id, () => {
         loadPersons();
     });
+}
+
+function showPerson(id)
+{
+    window.location.href = "./person.html?id=" + id;
 }
