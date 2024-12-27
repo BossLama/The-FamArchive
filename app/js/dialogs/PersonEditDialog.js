@@ -46,7 +46,11 @@ class PersonEditDialog
 
     initValues(person_id)
     {
+
         this.fetchPersonDataById(person_id, (data) => {
+            let mother_name =  data.mother ? `${data.mother.first_name} ${data.mother.last_name}` : "";
+            let father_name =  data.father ? `${data.father.first_name} ${data.father.last_name}` : "";
+
             document.getElementById("input_person_edit_firstname").value = data.first_name;
             document.getElementById("input_person_edit_lastname").value = data.last_name;
             document.getElementById("input_person_edit_nutname").value = data.nut_name;
@@ -56,10 +60,10 @@ class PersonEditDialog
             document.getElementById("input_person_edit_deathday").value = data.death_day;
             document.getElementById("input_person_edit_deathmonth").value = data.death_month;
             document.getElementById("input_person_edit_deathyear").value = data.death_year;
-            document.getElementById("input_person_edit_mother").value = `${data.mother.first_name} ${data.mother.last_name}`;
-            document.getElementById("input_person_edit_mother_id").value = data.mother.id;
-            document.getElementById("input_person_edit_father").value = `${data.father.first_name} ${data.father.last_name}`;
-            document.getElementById("input_person_edit_father_id").value = data.father.id;
+            document.getElementById("input_person_edit_mother").value = mother_name
+            document.getElementById("input_person_edit_mother_id").value = data.mother ? data.mother.id : "";
+            document.getElementById("input_person_edit_father").value = father_name;
+            document.getElementById("input_person_edit_father_id").value = data.father ? data.father.id : "";
             
         });
     }
@@ -151,6 +155,7 @@ class PersonEditDialog
     {
 
         let data = {
+            "id": this.loaded_user,
             "firstname" : document.getElementById("input_person_edit_firstname").value,
             "lastname" : document.getElementById("input_person_edit_lastname").value,
             "nutname" : document.getElementById("input_person_edit_nutname").value,
@@ -180,17 +185,21 @@ class PersonEditDialog
                 {
                     this.hideDialog();
                     this.onSave(data.data);
+
+                    const unicornManager =  new UnicornAlertHandler();
+                    unicornManager.createAlert(UnicornAlertTypes.SUCCESS, 'Person erfolgreich bearbeitet', 3000);
                 }
                 else
                 {
                     const unicornManager =  new UnicornAlertHandler();
-                    unicornManager.createAlert(UnicornAlertTypes.ERROR, 'Person konnte nicht erstellt werden', 3000);
+                    unicornManager.createAlert(UnicornAlertTypes.ERROR, 'Person konnte nicht bearbeitet werden', 3000);
                 }
             }
             else
             {
                 const unicornManager =  new UnicornAlertHandler();
-                unicornManager.createAlert(UnicornAlertTypes.ERROR, 'Unbekannter Fehler beim Erstellen einer Person', 3000);
+                unicornManager.createAlert(UnicornAlertTypes.ERROR, 'Unbekannter Fehler beim Bearbeiten einer Person', 3000);
+                console.error(data);
             }
         });
         return;

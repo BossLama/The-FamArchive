@@ -23,10 +23,10 @@ use FamArchive\DatabaseConnector;
         first_name VARCHAR(30),
         last_name VARCHAR(30),
         nut_name VARCHAR(30),
-        birth_year YEAR,
+        birth_year INT,
         birth_month TINYINT,
         birth_day TINYINT,
-        death_year YEAR,
+        death_year INT,
         death_month TINYINT,
         death_day TINYINT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

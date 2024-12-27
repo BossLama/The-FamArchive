@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loader = new ScriptLoader();
     loader.addScript("plugins/UnicornAlert");
+    loader.addScript("dialogs/PersonEditDialog");
     loader.addScript("dialogs/PersonCreateDialog");
     loader.addScript("dialogs/ConfirmDialog");
     loader.addScript("classes/Sidenavigation");
@@ -78,7 +79,7 @@ function getPersonItem(person)
         <td>${birthdate}</td>
         <td>${deathdate}</td>
         <td>
-            <button class="edit" onclick="editPerson()">Bearbeiten</button>
+            <button class="edit" onclick="editPerson(${person.id})">Bearbeiten</button>
             <button class="show" onclick="showPerson()">Anzeigen</button>
             <button class="delete">Löschen</button>
         </td>`;
@@ -122,5 +123,12 @@ function deletePerson(person)
                 }
             });
         }
+    });
+}
+
+function editPerson(id)
+{
+    new PersonEditDialog(id, () => {
+        loadPersons();
     });
 }
