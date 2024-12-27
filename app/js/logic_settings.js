@@ -16,6 +16,7 @@ function postLoaded()
     new Sidenavigation("Einstellungen");
 
     // Add event listener to the import file input
+    document.getElementById("input_import_file").addEventListener("change", handleImport);
 
 }
 
