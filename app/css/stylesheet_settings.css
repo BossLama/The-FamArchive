@@ -1,0 +1,33 @@
+@import url(modules/module_default.css);
+@import url(modules/module_side-navigation.css);
+
+h2
+{
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.line
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+button.export
+{
+    background-color: #242929;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: background-color 0.3s;
+}
+
+    button.export:hover
+    {
+        background-color: #1a1d1e;
+    }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstellungen | FamArchive</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="app/css/stylesheet_settings.css">
+    <!-- Scripts -->
+    <script src="app/js/classes/ScriptLoader.js"></script>
+    <script src="app/js/logic_settings.js"></script>
+</head>
+<body>
+    <main id="page_content" class="page-content">
+        <section class="section-gallery">
+            <h2>Einstellungen:</h2>
+            <div class="line">
+                <span>Exportieren</span>
+                <div class="container"><button class="export" onclick="createExport()">Alle Daten exportieren</button></div>
+            </div>
+            <div class="line">
+                <span>Importieren</span>
+                <div class="container"><button class="export">Daten importieren</button></div>
+                <input type="file" name="input_import_file" id="input_import_file">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
