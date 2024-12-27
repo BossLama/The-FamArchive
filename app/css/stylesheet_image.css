@@ -111,6 +111,39 @@ main
             }
 
 
+    main .ns-information
+    {
+        border-left: 0.5rem solid rgba(255, 208, 0, 0.6);
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        opacity: 0.5;
+        transition: opacity 0.25s;
+    }
+
+        main .ns-information h2
+        {
+            font-weight: 800;
+        }
+
+        main .ns-information p
+        {
+            font-weight: 300;
+            line-height: 1.5rem;
+        }
+
+        main .ns-information a
+        {
+            color: #000;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        main .ns-information:hover
+        {
+            opacity: 1;
+        }
 
 
 

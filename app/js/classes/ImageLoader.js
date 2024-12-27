@@ -69,6 +69,11 @@ class ImageLoader
                 <div class="line"><span class="bold">Aufnahmeort</span><span>${location}</span></div>
                 <div class="line"><span class="bold">Beschreibung</span><span>${description}</span></div>
         `;
+
+        if(year >= 1933 && year <= 1945)
+        {
+            document.getElementById("ns_information").style.display = "block";
+        }
     }
 
     renderImage(url, callback = (canvas, image) =>{})
