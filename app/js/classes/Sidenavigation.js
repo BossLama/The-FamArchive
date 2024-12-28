@@ -19,6 +19,9 @@ class Sidenavigation
         this.elements.get(active).classList.add("active");
 
         document.body.prepend(this.side_navigation);
+
+        // Add the toggle button for mobile
+        this.createToggleButton();
     }
 
     // Method returns the side navigation and the ul element as array
@@ -88,4 +91,16 @@ class Sidenavigation
         }
     }
 
+    // Create a toggle button for mobile devices
+    createToggleButton()
+    {
+        let toggleButton = document.createElement("button");
+        toggleButton.id = "toggle_navigation";
+        toggleButton.innerHTML = "☰"; // Hamburger menu icon
+        toggleButton.addEventListener("click", () => {
+            this.side_navigation.classList.toggle("visible");
+        });
+
+        document.body.prepend(toggleButton);
+    }
 }
