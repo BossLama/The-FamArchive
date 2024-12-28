@@ -79,3 +79,9 @@ function handleImport()
         }
     });
 }
+
+function openDatabase()
+{
+    let host = window.location.hostname;
+    window.open("http://" + host + "/phpmyadmin", "_blank");
+}
