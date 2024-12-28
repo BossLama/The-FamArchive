@@ -6,6 +6,11 @@ main
     display: flex;
     align-items: center;
     gap: 3rem;
+
+    @media only screen and (max-width: 900px)
+    {
+        flex-direction: column;
+    }
 }
 
     main .section-image
@@ -28,6 +33,12 @@ main
         max-height: 100%;
         overflow-y: scroll;
         scrollbar-width: none;
+
+        @media only screen and (max-width: 900px)
+        {
+            max-height: 100%;
+            overflow-y: auto;
+        }
     }
 
         main .section-details h2
